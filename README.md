@@ -6,7 +6,7 @@
 
 Esse é um projeto em next [Next.js](https://nextjs.org/) usando [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Começando
 
 Primeiro instale as dependências na sua máquina, depois rode os comando abaixo para rodar no modo de desenvolvimento:
 
