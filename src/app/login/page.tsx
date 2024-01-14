@@ -1,39 +1,39 @@
-"use client";
+'use client'
 
-import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { FaGoogle } from "react-icons/fa";
-import { useSession, signIn } from "next-auth/react";
-import "./styles.css";
+import { useRouter } from 'next/navigation'
+import { FormEvent, useState } from 'react'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
+import { FaGoogle } from 'react-icons/fa'
+import { useSession, signIn } from 'next-auth/react'
+import './styles.css'
 
 export default function LogIn() {
-  const { data } = useSession();
-  const router = useRouter();
+  const { data } = useSession()
+  const router = useRouter()
 
   if (data) {
-    router.replace("/");
+    router.replace('/')
   }
 
   async function handleLogIn() {
-    await signIn();
+    await signIn()
   }
 
   function onLogin(event: FormEvent) {
-    event.preventDefault();
+    event.preventDefault()
 
     if (!email || !password) {
-      return null;
+      return null
     }
 
-    console.log(1, email, 2, password);
+    console.log(1, email, 2, password)
 
-    router.replace("/");
+    router.replace('/')
   }
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   return (
     <div className="container">
@@ -44,7 +44,7 @@ export default function LogIn() {
 
             <div className="wrap-input">
               <Input
-                className={email !== "" ? "has-val input" : "input"}
+                className={email !== '' ? 'has-val input' : 'input'}
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -54,7 +54,7 @@ export default function LogIn() {
 
             <div className="wrap-input">
               <Input
-                className={password !== "" ? "has-val input" : "input"}
+                className={password !== '' ? 'has-val input' : 'input'}
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -84,5 +84,5 @@ export default function LogIn() {
         </div>
       </div>
     </div>
-  );
+  )
 }

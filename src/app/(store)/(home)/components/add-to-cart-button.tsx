@@ -1,30 +1,30 @@
-"use client";
+'use client'
 
-import { Button } from "@/components/ui/button";
-import { useCart } from "@/context/create-context";
-import { Product } from "@/data/types/products";
-import { ShoppingBag } from "lucide-react";
-import { toast } from "react-toastify";
+import { Button } from '@/components/ui/button'
+import { useCart } from '@/context/create-context'
+import { Product } from '@/data/types/products'
+import { ShoppingBag } from 'lucide-react'
+import { toast } from 'react-toastify'
 
 export interface AddToCartButtonProps {
-  product: Product;
+  product: Product
 }
 
 export function AddToCartButton({ product }: AddToCartButtonProps) {
-  const { addToCart } = useCart();
+  const { addToCart } = useCart()
 
   function handleAddProductToCart() {
-    addToCart(product);
-    toast.success("Produro adicionado no carrinho👍🏽!", {
-      position: "top-right",
+    addToCart(product)
+    toast.success('Produro adicionado no carrinho👍🏽!', {
+      position: 'top-right',
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "light",
-    });
+      theme: 'light',
+    })
   }
 
   return (
@@ -34,5 +34,5 @@ export function AddToCartButton({ product }: AddToCartButtonProps) {
     >
       <ShoppingBag className="h-4 w-4" />
     </Button>
-  );
+  )
 }

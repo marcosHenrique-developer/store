@@ -1,30 +1,30 @@
-import { api } from "@/data/api";
-import { Product } from "@/data/types/products";
-import { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { AddToCartButton } from "./components/add-to-cart-button";
+import { api } from '@/data/api'
+import { Product } from '@/data/types/products'
+import { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import { AddToCartButton } from './components/add-to-cart-button'
 
 async function getFeaturedProducts(): Promise<Product[]> {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  await new Promise((resolve) => setTimeout(resolve, 3000))
 
-  const response = await api("/products", {
+  const response = await api('/products', {
     next: {
       revalidate: 60 * 60, // 1 hour
     },
-  });
+  })
 
-  const products = await response.json();
+  const products = await response.json()
 
-  return products;
+  return products
 }
 
 export const metadata: Metadata = {
-  title: "Home",
-};
+  title: 'Home',
+}
 
 export default async function Home() {
-  const highlightedProduct = await getFeaturedProducts();
+  const highlightedProduct = await getFeaturedProducts()
 
   return (
     <div className="grid max-h-[860px] grid-cols-3 grid-rows-3 gap-6">
@@ -48,8 +48,8 @@ export default async function Home() {
               <AddToCartButton product={product} />
             </div>
           </Link>
-        );
+        )
       })}
     </div>
-  );
+  )
 }

@@ -1,7 +1,7 @@
-import { Header } from "@/components/header";
-import { CartProvider } from "@/context/create-context";
+import { Header } from '@/components/header'
+import { CartProvider } from '@/context/create-context'
 
-import { ReactNode } from "react";
+import { ReactNode } from 'react'
 
 export default function StoreLayout({ children }: { children: ReactNode }) {
   return (
@@ -11,5 +11,5 @@ export default function StoreLayout({ children }: { children: ReactNode }) {
         {children}
       </div>
     </CartProvider>
-  );
+  )
 }

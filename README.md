@@ -23,9 +23,7 @@ bun dev
 Depois Abra seu [http://localhost:3000](http://localhost:3000) no seu browser e veja o resultado.
 
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
+## Sabre as tecnologias usadas
 
 - Construção de template dinâmico usando React JS.
 - Aplicação usando NextJs na criação de uma loja virtual.
