@@ -34,7 +34,7 @@ export function Cart() {
                     key={cart.product.id}
                     className="col-span-1 row-span-3 flex flex-col justify-center items-center gap-2 bg-zinc-900 rounded-full"
                   >
-                    <span className="text-l text-zinc-400">
+                    <span className="text-sm text-zinc-400">
                       {cart.product.title}
                     </span>
                     <Image
