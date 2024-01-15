@@ -30,5 +30,5 @@ Depois Abra seu [http://localhost:3000](http://localhost:3000) no seu browser e 
 - Usei tailwind, Next auth para autenticação, novas deatures do Next como
  -(Server components, App Router).
 - Busca usando searchParams
--Deploy na vercel
+-Deploy na vercel.
 
