@@ -26,6 +26,8 @@ const theme = createTheme({
       styleOverrides: {
         paper: {
           background: 'rgb(9 9 11)',
+          // borderLeft: '1px solid rgb(63 63 70)',
+          boxShadow: '-0.5px 0 1px 1px rgba(255,255,255, 0.3)',
         },
       },
     },
@@ -70,7 +72,7 @@ export function Cart() {
               return (
                 <div
                   key={cart.product.id}
-                  className="flex flex-col justify-center gap-1 w-[320px] items-center text-zinc-50 my-1 bg-zinc-900 rounded-2xl"
+                  className="flex flex-col justify-center gap-1 w-[320px] items-center text-zinc-50 my-1 bg-zinc-900 rounded-2xl mx-2"
                 >
                   <span className="text-m text-zinc-400">
                     {cart.product.title}
