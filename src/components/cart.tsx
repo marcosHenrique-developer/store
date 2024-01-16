@@ -6,6 +6,7 @@ import { ShoppingBag } from 'lucide-react'
 import { Button } from './ui/button'
 import Image from 'next/image'
 import Drawer from '@mui/material/Drawer'
+import { ThemeProvider, createTheme } from '@mui/material'
 // import {
 //   Drawer,
 //   DrawerClose,
@@ -18,6 +19,18 @@ import Drawer from '@mui/material/Drawer'
 // } from '@/components/ui/drawer'
 
 type Anchor = 'left' | 'right'
+
+const theme = createTheme({
+  components: {
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          background: 'rgb(9 9 11)',
+        },
+      },
+    },
+  },
+})
 export function Cart() {
   const { items } = useCart()
 
@@ -46,50 +59,51 @@ export function Cart() {
         <ShoppingBag className="h-4 w-4 mr-1" />
         <span className="text-sm">Cart ({items?.length})</span>
       </Button>
-      <Drawer
-        PaperProps={{ className: 'bg-zinc-950 z[1201]' }}
-        anchor="right"
-        open={state.right}
-        onClose={toggleDrawer('right', false)}
-      >
-        {items?.length ? (
-          items.map((cart) => {
-            return (
-              <div
-                key={cart.product.id}
-                className="flex flex-col justify-center gap-1 w-[320px] items-center text-zinc-50 my-1 bg-zinc-900 rounded-2xl"
-              >
-                <span className="text-m text-zinc-400">
-                  {cart.product.title}
-                </span>
-                <Image
-                  src={cart.product.image}
-                  width={100}
-                  height={100}
-                  quality={100}
-                  alt=""
-                />
-                <span className="inline-block rounded-full bg-violet-500 px-5 py-2.5 font-semibold">
-                  {cart.product.price.toLocaleString('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL',
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 0,
-                  })}
-                </span>
+      <ThemeProvider theme={theme}>
+        <Drawer
+          anchor="right"
+          open={state.right}
+          onClose={toggleDrawer('right', false)}
+        >
+          {items?.length ? (
+            items.map((cart) => {
+              return (
+                <div
+                  key={cart.product.id}
+                  className="flex flex-col justify-center gap-1 w-[320px] items-center text-zinc-50 my-1 bg-zinc-900 rounded-2xl"
+                >
+                  <span className="text-m text-zinc-400">
+                    {cart.product.title}
+                  </span>
+                  <Image
+                    src={cart.product.image}
+                    width={100}
+                    height={100}
+                    quality={100}
+                    alt=""
+                  />
+                  <span className="inline-block rounded-full bg-violet-500 px-5 py-2.5 font-semibold">
+                    {cart.product.price.toLocaleString('pt-BR', {
+                      style: 'currency',
+                      currency: 'BRL',
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 0,
+                    })}
+                  </span>
 
-                <span className="text-sm text-zinc-900 rounded-full bg-zinc-400 px-5 py-2.5 font-semibold">
-                  Quantidade do produto: {cart.quantity}
-                </span>
-              </div>
-            )
-          })
-        ) : (
-          <div className="w-[320px] text-center">
-            <p className="mt-6 text-slate-300">Carrinho vazio!</p>
-          </div>
-        )}
-      </Drawer>
+                  <span className="text-sm text-zinc-900 rounded-full bg-zinc-400 px-5 py-2.5 font-semibold mb-2">
+                    Quantidade do produto: {cart.quantity}
+                  </span>
+                </div>
+              )
+            })
+          ) : (
+            <div className="w-[320px] text-center">
+              <p className="mt-6 text-slate-600">Carrinho vazio!</p>
+            </div>
+          )}
+        </Drawer>
+      </ThemeProvider>
     </div>
   )
 
