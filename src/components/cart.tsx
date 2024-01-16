@@ -47,7 +47,7 @@ export function Cart() {
         <span className="text-sm">Cart ({items?.length})</span>
       </Button>
       <Drawer
-        PaperProps={{ className: 'bg-zinc-950' }}
+        PaperProps={{ className: 'bg-zinc-950 z[1201]' }}
         anchor="right"
         open={state.right}
         onClose={toggleDrawer('right', false)}
