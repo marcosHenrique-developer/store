@@ -15,10 +15,11 @@ export default function LoginButton() {
         <span className="text-xs">{data?.user?.name}</span>
 
         <Image
-          src="https://github.com/marcosHenrique-developer.png"
+          src={data?.user?.image as string}
           className="h-6 w-6 rounded-full"
           width={24}
           height={24}
+          quality={100}
           alt=""
         />
       </div>
@@ -38,6 +39,7 @@ export default function LoginButton() {
           className="h-6 w-6 rounded-full"
           width={24}
           height={24}
+          quality={100}
           alt=""
         />
       </Link>
