@@ -27,11 +27,12 @@ Depois Abra seu [http://localhost:3000](http://localhost:3000) no seu browser e 
 
 - Construção de template dinâmico usando React JS.
 - Aplicação usando NextJs na criação de uma loja virtual.
-- Uso tailwind.
+- Uso de tailwind.
 - Next auth para autenticação.
-- Novas features do Next como-(Server components, App Router).
-  - Uso Providers.
-  - Uso Shad Components.
-- Busca usando searchParams
+- Novas features do Next como.
+  - (Server components, App Router).
+- Uso de Providers.
+- Uso de Shad Components.
+- Busca usando searchParams.
   -Deploy na vercel.
 
