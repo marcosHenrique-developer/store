@@ -34,5 +34,5 @@ Depois Abra seu [http://localhost:3000](http://localhost:3000) no seu browser e 
 - Uso de Providers.
 - Uso de Shad Components.
 - Busca usando searchParams.
-  -Deploy na vercel.
+    -Deploy na vercel.
 
